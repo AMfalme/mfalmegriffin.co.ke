@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/AMfalme/portfolio/static/css/main.6bb5a4ee.css",
+    "main.js": "/AMfalme/portfolio/static/js/main.6ad90ded.js",
+    "static/media/mfalme.png": "/AMfalme/portfolio/static/media/mfalme.271dd1e69fed4cef4f93.png",
+    "static/media/ofisi.jpg": "/AMfalme/portfolio/static/media/ofisi.14a160be4e012e867fc5.jpg",
+    "static/media/logo-bposeats.png": "/AMfalme/portfolio/static/media/logo-bposeats.ea027dfc44bcf5feadc2.png",
+    "index.html": "/AMfalme/portfolio/index.html",
+    "main.6bb5a4ee.css.map": "/AMfalme/portfolio/static/css/main.6bb5a4ee.css.map",
+    "main.6ad90ded.js.map": "/AMfalme/portfolio/static/js/main.6ad90ded.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6bb5a4ee.css",
+    "static/js/main.6ad90ded.js"
+  ]
+}
