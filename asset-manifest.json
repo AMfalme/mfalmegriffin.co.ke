@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css",
-    "main.js": "/mfalmegriffin.co.ke/static/js/main.e1473a29.js",
-    "static/media/mfalme.png": "/mfalmegriffin.co.ke/static/media/mfalme.271dd1e69fed4cef4f93.png",
-    "static/media/ofisi.jpg": "/mfalmegriffin.co.ke/static/media/ofisi.14a160be4e012e867fc5.jpg",
-    "static/media/logo-bposeats.png": "/mfalmegriffin.co.ke/static/media/logo-bposeats.ea027dfc44bcf5feadc2.png",
-    "index.html": "/mfalmegriffin.co.ke/index.html",
-    "main.6bb5a4ee.css.map": "/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css.map",
-    "main.e1473a29.js.map": "/mfalmegriffin.co.ke/static/js/main.e1473a29.js.map"
+    "main.css": "https://amfalme.github.io/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css",
+    "main.js": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.8352ed64.js",
+    "static/media/mfalme.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/mfalme.271dd1e69fed4cef4f93.png",
+    "static/media/ofisi.jpg": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/ofisi.14a160be4e012e867fc5.jpg",
+    "static/media/logo-bposeats.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/logo-bposeats.ea027dfc44bcf5feadc2.png",
+    "index.html": "https://amfalme.github.io/mfalmegriffin.co.ke/index.html",
+    "main.6bb5a4ee.css.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css.map",
+    "main.8352ed64.js.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.8352ed64.js.map"
   },
   "entrypoints": [
     "static/css/main.6bb5a4ee.css",
-    "static/js/main.e1473a29.js"
+    "static/js/main.8352ed64.js"
   ]
 }
