@@ -1,38 +1,39 @@
 import React from 'react'
-
-
+import nyagaka from '../static/images/nyagakaandondusoadvocates.png'
+import mfalme from '../static/images/mfalmegriffin.co.ke.png' 
+import steppingstones from '../static/images/thesteppingstoneselementaryschool.png'
 const products = [
     {
       id: 1,
       name: 'Mfalme Griffin Portfolio',
       href: 'http://mfalmegriffin.co.ke/',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      imageSrc: mfalme,
       imageAlt: "Front of men's Basic Tee in black.",
       description: `This is a Personal porfolio website that also includes my professional blog. It has been
        developed mainly in React and Django Wagtail among other technologies.`,
-      color: 'Black',
+      color: 'portfolio website',
     },
     {
       id: 2,
       name: 'Nyagaka and Onduso Advocates',
       href: 'http://nyagakaandondusoadvocates.co.ke/',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      imageSrc: nyagaka,
       imageAlt: "Front of men's Basic Tee in black.",
       description: `This is a professional website giving Nyagaka and Onduso advocates a digital presence as well
         an easier and more diligent way of managing their documents and clients altogether giving them
          a mixture of a CMS based system and an ERP`,
-      color: 'Black',
+      color: 'Legal website',
     },
     {
       id: 2,
-      name: 'Nyagaka and Onduso Advocates',
-      href: 'http://nyagakaandondusoadvocates.co.ke/',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
+      name: 'The Stepping Stones Elementary School',
+      href: 'https://www.thesteppingstoneselementaryschool.sc.ke/',
+      imageSrc: steppingstones,
       imageAlt: "Front of men's Basic Tee in black.",
       description: `This is a professional website giving Nyagaka and Onduso advocates a digital presence as well
         an easier and more diligent way of managing their documents and clients altogether giving them
          a mixture of a CMS based system and an ERP`,
-      color: 'Black',
+      color: 'School website',
     },
     // More products...
   ]
@@ -52,12 +53,13 @@ const products = [
                     src={product.imageSrc}
                     alt={product.imageAlt}
                     className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                    
                   />
                 </div>
                 <div className="mt-4 flex justify-between">
                   <div>
                     <h3 className="text-sm text-gray-700">
-                      <a href={product.href}>
+                      <a href={product.href} target="_blank">
                         <span aria-hidden="true" className="absolute inset-0" />
                         {product.name}
                       </a>
