@@ -1,16 +1,19 @@
 {
   "files": {
     "main.css": "https://amfalme.github.io/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css",
-    "main.js": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.8352ed64.js",
+    "main.js": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.d1b4bde2.js",
+    "static/media/nyagakaandondusoadvocates.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/nyagakaandondusoadvocates.91a58b926f2917e2b6e0.png",
+    "static/media/thesteppingstoneselementaryschool.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/thesteppingstoneselementaryschool.b95f5d831b97c00b4788.png",
+    "static/media/mfalmegriffin.co.ke.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/mfalmegriffin.co.ke.8d2f3a19020061748948.png",
     "static/media/mfalme.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/mfalme.271dd1e69fed4cef4f93.png",
     "static/media/ofisi.jpg": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/ofisi.14a160be4e012e867fc5.jpg",
     "static/media/logo-bposeats.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/logo-bposeats.ea027dfc44bcf5feadc2.png",
     "index.html": "https://amfalme.github.io/mfalmegriffin.co.ke/index.html",
     "main.6bb5a4ee.css.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css.map",
-    "main.8352ed64.js.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.8352ed64.js.map"
+    "main.d1b4bde2.js.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.d1b4bde2.js.map"
   },
   "entrypoints": [
     "static/css/main.6bb5a4ee.css",
-    "static/js/main.8352ed64.js"
+    "static/js/main.d1b4bde2.js"
   ]
 }
