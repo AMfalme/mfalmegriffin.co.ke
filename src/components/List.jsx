@@ -4,7 +4,7 @@ export default function List(props) {
 
 
     useEffect(() => {
-        console.log(props);
+        console.log('props');
       });
   return (
     

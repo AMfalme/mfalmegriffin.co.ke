@@ -2,9 +2,11 @@ import './App.css';
 import "./index.css"
 
 import Hero from './components/Hero'
-import Work from './components/Work'
-import About from './components/About';
-import Projects from './components/Projects';
+import Work from './pages/Work'
+import About from './pages/About';
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +15,7 @@ function App() {
         <About/>
         <Work/>
         <Projects/>
+        <Contact/>
       </h1>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import List from './List'
+import List from '../components/List'
 
 import about from '../static/images/ofisi.jpg'
 

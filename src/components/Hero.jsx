@@ -1,8 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from '../static/images/logo.png'
 import myPortfolio from '../static/images/mfalme.png'
+import axios from 'axios';
+import { API_URL } from "../constants";
+
+import Title from './Title'
 
 const navigation = [
   { name: 'About', href: '#About'},
@@ -13,7 +17,17 @@ const navigation = [
 
 export default function Hero() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [heroData, setHeroData] = useState({});
 
+  useEffect(() => {
+    const heroDetails = axios.get(API_URL)
+      .then(response => console.log(response))
+      .catch(error => console.log(error))
+      .finally(() => {
+        console.log('the axios call was executed')
+      })
+    
+  }, []);
   return (
     <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -120,10 +134,11 @@ export default function Hero() {
               {/*  and transforming client vision
                into reliable perfection that will exceed your expectations. */}
             </p>
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-              I craft custom software solutions into digital realities.
-            </h1>
-            
+            <Title 
+              classes={"text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"}
+              text={"I craft custom software solutions into digital realities."}
+            >
+            </Title>            
           </div>
           <div className="hidden sm:m-8 sm:flex sm:justify-center">
             
