@@ -9,8 +9,5 @@
     "main.6bb5a4ee.css.map": "/mfalmegriffin.co.ke/static/css/main.6bb5a4ee.css.map",
     "main.e1473a29.js.map": "/mfalmegriffin.co.ke/static/js/main.e1473a29.js.map"
   },
-  "entrypoints": [
-    "static/css/main.6bb5a4ee.css",
-    "static/js/main.e1473a29.js"
-  ]
+  "entrypoints": ["static/css/main.6bb5a4ee.css", "static/js/main.e1473a29.js"]
 }
