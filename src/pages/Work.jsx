@@ -31,7 +31,7 @@ export default function Work () {
       id="Work"
       className="sm:px-8 mt-24 md:mt-28 mx-auto max-w-7xl lg:px-8 relative px-4 sm:px-8 lg:px-12 mx-auto max-w-2xl lg:max-w-5xl"
     >
-        <h5 className="text-2xl font-bold tracking-tight text-gray-900 mb-10">
+        <h5 className="text-2xl font-bold tracking-tighttext-zinc-800 dark:text-zinc-100 mb-10">
           Career
         </h5>
       <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">

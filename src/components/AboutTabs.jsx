@@ -37,6 +37,14 @@ function MyTabs() {
     "Back End",
     "Others"
   ]
+
+  const isDarkMode= function (){
+    const body = document.body;
+    if (body.classList.contains("dark")) return 'white';
+    return false;
+  }
+
+  console.log(isDarkMode)
   return (
     <Tab.Group>
       <Tab.List className="grid grid-cols-3 mb-10 border-b border-gray-300">
@@ -45,10 +53,10 @@ function MyTabs() {
               key={category}
               className={({ selected }) =>
                 classNames(
-                  'w-full py-2.5 text-sm font-medium leading-5 outline-none text-gray-900',
+                  'w-full py-2.5 text-sm font-medium leading-5 outline-none text-zinc-800 dark:text-zinc-100',
                   // 'ring-white ring-opacity-60 ring-offset-2 ring-offset-blue-400 focus:outline-none focus:ring-2',
                   selected
-                    ? 'border-b-2 border-gray-900 font-black'
+                    ? 'border-b-2 text-bold dark:border-zinc-900 border-gray-900 font-black'
                     : ' hover:text-bold hover:border-gray-900 hover:font-black'
                 )
               }
@@ -66,7 +74,7 @@ function MyTabs() {
           
           <li>
             <TechStackIcon 
-              icon={<IconReact height="2em" width="2em" />}
+              icon={<IconReact height="2em" width="2em" color={isDarkMode}/>}
               name="React"
             />
           </li>
@@ -168,7 +176,7 @@ function MyTabs() {
             ">
             <img src={iconDRF} height="40px" width="40px" alt="" />
             <div>
-                <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900">
+                <h3 className="text-base font-semibold leading-7 tracking-tighttext-zinc-800 dark:text-zinc-100">
                     DRF
                 </h3>
             </div>

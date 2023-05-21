@@ -12,9 +12,10 @@ import ThemeChanger from "./ThemeChanger";
 
 
 const navigation = [
-  { name: "About", href: "#About" },
-  { name: "Career", href: "#Work" },
-  { name: "Projects", href: "#Projects" },
+  { name: "About", href: "http://mfalmegriffin.co.ke/#About" },
+  { name: "Career", href: "http://mfalmegriffin.co.ke/#Work" },
+  { name: "Projects", href: "http://mfalmegriffin.co.ke/#Projects" },
+  {name: 'Blog'}
 ];
 
 export default function Hero() {
@@ -33,7 +34,7 @@ export default function Hero() {
       });
   }, []);
   return (
-    <div className="bg-white">
+    <div className="bg-white dark:bg-slate-800">
       <header className="absolute inset-x-0 top-0 z-50">
         <nav
           className="flex items-center justify-between p-6 lg:px-8"
@@ -48,7 +49,7 @@ export default function Hero() {
           <div className="flex lg:hidden">
             <button
               type="button"
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-zinc-700 dark:text-zinc-700"
               onClick={() => setMobileMenuOpen(true)}
             >
               <span className="sr-only">Open main menu</span>
@@ -60,7 +61,7 @@ export default function Hero() {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900"
+                className="text-sm font-semibold leading-6 text-zinc-800 dark:text-zinc-100"
               >
                 {item.name}
               </a>
@@ -68,12 +69,7 @@ export default function Hero() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <ThemeChanger />
-            <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-gray-900"
-            >
-              Blog <span aria-hidden="true">&rarr;</span>
-            </a>
+           
           </div>
         </nav>
         <Dialog
@@ -95,7 +91,7 @@ export default function Hero() {
               </a>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-zinc-700 dark:text-zinc-700"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -109,7 +105,7 @@ export default function Hero() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7text-zinc-800 dark:text-zinc-100 hover:bg-gray-50"
                     >
                       {item.name}
                     </a>
@@ -118,7 +114,7 @@ export default function Hero() {
                 <div className="py-6">
                   <a
                     href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7text-zinc-800 dark:text-zinc-100 hover:bg-gray-50"
                   >
                     Log in
                   </a>
@@ -149,22 +145,22 @@ export default function Hero() {
         />
         <div className="mx-auto max-w-2xl">
           <div className="text-center">
-            <p className="m-6 text-lg leading-8 text-gray-600">
+            <p className="m-6 text-lg leading-8 text-zinc-600 dark:text-zinc-100">
               {heroData.title}
               {/*  and transforming client vision
                into reliable perfection that will exceed your expectations. */}
             </p>
             <Title
               classes={
-                "text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+                "text-4xl font-bold tracking-tighttext-zinc-800 dark:text-zinc-100 sm:text-6xl"
               }
               text={heroData.paragraph}
             ></Title>
           </div>
           <div className="hidden sm:m-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full px-3 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            <div className="relative rounded-full px-3 text-sm leading-6 text-zinc-600 dark:text-white ring-1 ring-white-900/10 hover:ring-zinc-900/20">
               {heroData.cta_text}{" "}
-              <a href="#" className="font-semibold text-indigo-600">
+              <a href="#" className="font-semibold text-indigo-600 dark:text-white-900/10">
                 <span className="absolute inset-0" aria-hidden="true" />
                 Reach out <span aria-hidden="true">&rarr;</span>
               </a>

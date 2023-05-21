@@ -42,7 +42,7 @@ export default function Projects() {
   return (
     <div className="bg-white w-10/12 m-auto" id="Projects">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+        <h2 className="text-2xl font-bold tracking-tighttext-zinc-800 dark:text-zinc-100">
           Projects I have worked on
         </h2>
 
@@ -66,7 +66,7 @@ export default function Projects() {
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">{product.color}</p>
                 </div>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-mediumtext-zinc-800 dark:text-zinc-100">
                   {product.price}
                 </p>
               </div>

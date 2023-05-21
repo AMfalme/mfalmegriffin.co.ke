@@ -7,17 +7,20 @@ import About from "./pages/About";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 
+
+import { useEffect, useState } from "react";
+
 function App() {
+
+  
   return (
-    <div className="App">
-      <h1>
+      <div className="App dark:bg-slate-800">
         <Hero />
         <About />
         <Work />
-        <Projects />
+        {/* <Projects /> */}
         <Contact />
-      </h1>
-    </div>
+      </div>
   );
 }
 

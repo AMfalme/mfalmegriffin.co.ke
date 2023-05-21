@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
 import { FormProvider, useForm } from "react-hook-form";
+import { API_URL } from "../constants";
+import axios from "axios";
+
+
 
 export default function Contact() {
   const methods = useForm();
@@ -13,12 +17,26 @@ export default function Contact() {
   );
   
   
-  const onSubmit = methods.handleSubmit((e) => console.log(e));
+  const onSubmit = methods.handleSubmit(
+    (e) => {
+      axios
+      .post(API_URL + 'core/contact', {
+        email : e.email,
+        subject : e.subject,
+        description: e.message
+      })
+      .then(response => (console.log(response.data)))
+      
+      .catch((error) => console.log(error))
+      .finally(() => {
+        console.log("the axios call was executed");
+      });
+  });
   
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
+        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-centertext-zinc-800 dark:text-zinc-100 dark:text-white">
           Contact Us
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
@@ -65,10 +83,9 @@ export default function Contact() {
             <Input
               name="message"
               multiline={true}
-              label="subject"
+              label="Description"
               type="text"
-              id="subject"
-              placeholder={subject}
+              id="Description"
               validation={{
                 required: {
                   value: true,
@@ -79,9 +96,10 @@ export default function Contact() {
                   message: "min 6 characters",
                 },
               }}
+              placeholder={message}
             />
             <button
-              class="w-full inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 hover:border-transparent rounded"
+              class="w-full inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 dark:bg-slate-800 bg-slate-900 text-white hover:bg-slate-700 hover:border-transparent rounded"
               onClick={onSubmit}
             >
               {formStatus}

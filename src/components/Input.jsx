@@ -25,7 +25,7 @@ export default function Input({
   return (
     <div>
       <div className="flex justify-between">
-        <label htmlFor={id} className="font-semibold capitalize">
+        <label htmlFor={id} className="font-semibold capitalize text-zinc-700 dark:text-zinc-100">
           {label}
         </label>
         <AnimatePresence mode="wait" initial={false}>
@@ -47,7 +47,7 @@ export default function Input({
                             p-3 
                             w-full 
                             text-sm 
-                            text-gray-900 
+                           text-zinc-800 dark:text-zinc-100 
                             bg-gray-50 
                             rounded-lg 
                             border 
@@ -77,7 +77,7 @@ export default function Input({
                             p-3 
                             w-full 
                             text-sm 
-                            text-gray-900 
+                           text-zinc-800 dark:text-zinc-100 
                             bg-gray-50 
                             rounded-lg 
                             border 
