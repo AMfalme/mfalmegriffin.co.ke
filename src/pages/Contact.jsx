@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
+import Alert from "../components/Alert"
+
+
 import { FormProvider, useForm } from "react-hook-form";
 import { API_URL } from "../constants";
 import axios from "axios";
@@ -10,24 +13,42 @@ export default function Contact() {
   const methods = useForm();
 
   const [formStatus, setFormStatus] = useState("Send");
-  const [email, setEmail] = useState("youremail@mail.com ");
-  const [subject, setSubject] = useState("Subject");
-  const [message, setMessage] = useState(
-    "Let us build something amazing together"
-  );
-  
-  
+
+  // sendStatus {
+  // status: successfull or Failed
+  // title: action message title
+  // message: message
+  // }
+  const [sendStatus, setSendStatus] = useState(null);
+
   const onSubmit = methods.handleSubmit(
     (e) => {
+      setFormStatus("Sending");
       axios
       .post(API_URL + 'core/contact', {
         email : e.email,
         subject : e.subject,
         description: e.message
       })
-      .then(response => (console.log(response.data)))
+      .then(response => {
+        
+        
+        setSendStatus({
+          status: 200,
+          title: "Successfull",
+          message: "Message sent successfully. We will get in touch soon."
+        });
+        setFormStatus("Send");
       
-      .catch((error) => console.log(error))
+      })      
+      .catch((error) => {
+        setSendStatus({
+          status: 500,
+          title: "Error",
+          message: Object.values(error.response.data)
+        });
+        setFormStatus("Send");
+      })
       .finally(() => {
         console.log("the axios call was executed");
       });
@@ -60,7 +81,7 @@ export default function Contact() {
                   message: "required",
                 },
               }}
-              placeholder={email}
+              placeholder={"your@email.com"}
             />
             <Input
               name="subject"
@@ -77,7 +98,7 @@ export default function Contact() {
                   message: "min 6 characters",
                 },
               }}
-              placeholder={subject}
+              placeholder={"Subject"}
             />
 
             <Input
@@ -96,7 +117,7 @@ export default function Contact() {
                   message: "min 6 characters",
                 },
               }}
-              placeholder={message}
+              placeholder={"Let us build something amazing together"}
             />
             <button
               class="w-full inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 dark:bg-slate-800 bg-slate-900 text-white hover:bg-slate-700 hover:border-transparent rounded"
@@ -106,6 +127,7 @@ export default function Contact() {
             </button>
           </form>
         </FormProvider>
+        {sendStatus && <Alert message={sendStatus?.message} title={sendStatus?.title}/>}
       </div>
     </section>
   );

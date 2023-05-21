@@ -6,8 +6,10 @@ import myPortfolio from "../static/images/mfalme.png";
 import axios from "axios";
 import { API_URL } from "../constants";
 
+
+
 import Title from "./Title";
-import ThemeChanger from "./ThemeChanger";
+import DarkModeToggle from "./DarkModeToggle";
 
 
 
@@ -33,6 +35,7 @@ export default function Hero() {
         console.log("the axios call was executed");
       });
   }, []);
+  
   return (
     <div className="bg-white dark:bg-slate-800">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -68,7 +71,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <ThemeChanger />
+            <DarkModeToggle />
            
           </div>
         </nav>

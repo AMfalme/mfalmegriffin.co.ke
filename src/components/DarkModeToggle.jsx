@@ -1,10 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Toggle from 'react-toggle'
 import { useMediaQuery } from "react-responsive";
 
+import { ThemeContext, themes } from '../context/theme-context';
+
+
 export default function DarkModeToggle () {
-  const [isDark, setIsDark] = useState(false);
   
+  const [isDark, setIsDark] = useState(false);
+
+  
+  
+  function changeTheme() {
+    isDark === false ? setIsDark(true) : setIsDark(false)
+  }
+  
+  const theme = useContext(ThemeContext);
   const systemPrefersDark = useMediaQuery(
     {
       query: "(prefers-color-scheme: dark)",
@@ -22,15 +33,13 @@ export default function DarkModeToggle () {
   }, [isDark]); 
   
   return (
-    <div>
-        
-        <Toggle
-          checked={isDark}
-          onChange={({ target }) => setIsDark(target.checked)}
-          icons={''}
-          aria-label="Dark mode toggle"
-        />
-        
-    </div>
+    <ThemeContext.Provider value={"light"}>
+      <Toggle
+        checked={isDark}
+        onChange={() => changeTheme()}
+        icons={''}
+        aria-label="Dark mode toggle"
+      />  
+    </ThemeContext.Provider>
   )
 }
