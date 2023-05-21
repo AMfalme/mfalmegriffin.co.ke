@@ -7,6 +7,9 @@ import axios from "axios";
 import { API_URL } from "../constants";
 
 import Title from "./Title";
+import ThemeChanger from "./ThemeChanger";
+
+
 
 const navigation = [
   { name: "About", href: "#About" },
@@ -20,9 +23,8 @@ export default function Hero() {
 
   useEffect(() => {
     const heroDetails = axios
-      .get(API_URL)
+      .get(API_URL+'core/hero/')
       .then((response) => {
-        console.log(response.data);
         setHeroData(response.data.results[0]);
       })
       .catch((error) => console.log(error))
@@ -65,6 +67,7 @@ export default function Hero() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+            <ThemeChanger />
             <a
               href="#"
               className="text-sm font-semibold leading-6 text-gray-900"

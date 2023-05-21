@@ -1,56 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../static/images/logo-bposeats.png";
 import mizizi from "../static/images/mizizi.png";
+import { API_URL } from "../constants";
+import axios from "axios";
 
-const workExperiences = [
-  {
-    companyTitle: "Duara, Africa’s Talking Lab ",
-    description: `As a startup targeting the public cloud market in Kenya, 
-        we successfully developed a public cloud platform (Infrastructure as a Service) 
-        basing our code-base on the openstack project. I was in charge of the user interface
-        and user experience in the interaction with our platform and managed to develop 
-        the horizon module (front end for openstack) which has been written in Django 
-        and Angular frameworks. Also did the deployment and created pipelines that ensured
-        best practices in innovation and the devops/automation world are adhered to to
-         the letter. 
-        `,
-    jobTitle: "Front-End Software Developer",
-    duration: {
-      startDate: "August 2018",
-      endDate: "May 2019",
-    },
-  },
-  {
-    companyTitle: "BPOSeats, Remote Philippines",
-    description: `BPOseats has a keen interest when it comes to office productivity. 
-        I work hand in hand with a team of software developers to build tools and platforms 
-        for businesses to start, manage and oversee offshore and remote teams with a keen aim on 
-        improving productivity while finding an intelligent way to analyze and give accurate results. 
-        I am directly involved in bug fixing of the front end web application done in vue and occasional
-         Django bug fixes in the API integration. The API integration. 
-        `,
-    jobTitle: "Web Developer",
-    duration: {
-      startDate: "March 2021",
-      endDate: "March 2022",
-    },
-  },
-];
 
-export default function () {
-  const [experiences, setExperience] = useState(workExperiences);
+export default function Work () {
+  const [experiences, setExperience] = useState([]);
   const [email, setEmail] = useState("");
 
-  const handleEmailChange = (event) => {
-    console.log(email);
+  const handleEmailChange = (event) => {    
     setEmail(event.target.value);
   };
+
+
+  useEffect(() => {
+    axios
+      .get(API_URL+'core/careers/')
+      .then((response) => {
+        setExperience(response.data.results);
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        console.log("the axios call was executed");
+      });
+  }, []);
 
   return (
     <div
       id="Work"
       className="sm:px-8 mt-24 md:mt-28 mx-auto max-w-7xl lg:px-8 relative px-4 sm:px-8 lg:px-12 mx-auto max-w-2xl lg:max-w-5xl"
     >
+        <h5 className="text-2xl font-bold tracking-tight text-gray-900 mb-10">
+          Career
+        </h5>
       <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
         <div className="flex flex-col gap-16">
           {experiences.map((experience) => (
@@ -60,7 +43,7 @@ export default function () {
                 <a href="/articles/crafting-a-design-system-for-a-multiplanetary-future">
                   <span className="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl"></span>
                   <span className="relative z-10">
-                    {experience.companyTitle}
+                    {experience.company}
                   </span>
                 </a>
               </h2>
@@ -74,7 +57,7 @@ export default function () {
                 >
                   <span className="h-4 w-0.5 rounded-full bg-zinc-200 dark:bg-zinc-500"></span>
                 </span>
-                {experience.duration.startDate}
+                {experience.start_date}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -90,10 +73,10 @@ export default function () {
                   />
                 </svg>
 
-                {experience.duration.endDate}
+                {experience.end_date}
               </time>
               <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                {experience.description}
+                {experience.company_descr}
               </p>
             </article>
           ))}
@@ -196,9 +179,22 @@ export default function () {
 
               <span className="ml-3">Work</span>
             </h2>
-            <ol className="mt-6 space-y-4">
-              <li className="flex gap-4">
-                <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+            <div className="mt-6 space-y-4">
+              
+                <div className="
+                  flex 
+                  gap-4 
+                  relative 
+                  mt-1 
+                  flex 
+                  h-10 
+                  w-10 
+                  flex-none 
+                  items-center 
+                  justify-center 
+                  rounded-full 
+                  shadow-md 
+                  shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
                   <img
                     alt=""
                     loading="lazy"
@@ -210,7 +206,7 @@ export default function () {
                     src={mizizi}
                   />
                 </div>
-                <dl className="flex flex-auto flex-wrap gap-x-2">
+                {/* <dl className="flex flex-auto flex-wrap gap-x-2">
                   <dt className="sr-only">Company</dt>
                   <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
                     Duara
@@ -228,9 +224,9 @@ export default function () {
                     <span aria-hidden="true">—</span>
                     <time dateTime="2023">Present</time>
                   </dd>
-                </dl>
-              </li>
-              <li className="flex gap-4">
+                </dl> */}
+              
+              
                 <div
                   className="
                                         relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0
@@ -247,7 +243,7 @@ export default function () {
                     src={logo}
                   />
                 </div>
-                <dl className="flex flex-auto flex-wrap gap-x-2">
+                {/* <dl className="flex flex-auto flex-wrap gap-x-2">
                   <dt className="sr-only">Company</dt>
                   <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
                     BPOSeats
@@ -265,9 +261,8 @@ export default function () {
                     <span aria-hidden="true">—</span>
                     <time dateTime="2019">2019</time>
                   </dd>
-                </dl>
-              </li>
-            </ol>
+                </dl> */}
+              </div>
             <a
               className="inline-flex items-center gap-2 justify-center rounded-md py-2 px-3 text-sm outline-offset-2 transition active:transition-none bg-zinc-50 font-medium text-zinc-900 hover:bg-zinc-100 active:bg-zinc-100 active:text-zinc-900/60 dark:bg-zinc-800/50 dark:text-zinc-300 dark:hover:bg-zinc-800 dark:hover:text-zinc-50 dark:active:bg-zinc-800/50 dark:active:text-zinc-50/70 group mt-6 w-full"
               href="/#"

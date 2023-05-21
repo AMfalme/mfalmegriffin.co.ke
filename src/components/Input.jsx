@@ -22,9 +22,6 @@ export default function Input({
   const inputError = findInputError(errors, name);
   const isInvalid = isFormInValid(inputError);
 
-  console.log("errors: ", errors);
-  console.log("inputError: ", inputError);
-  console.log("isInvalid: ", isInvalid);
   return (
     <div>
       <div className="flex justify-between">

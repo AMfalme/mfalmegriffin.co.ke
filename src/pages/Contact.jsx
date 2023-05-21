@@ -11,30 +11,10 @@ export default function Contact() {
   const [message, setMessage] = useState(
     "Let us build something amazing together"
   );
-  // const []
-  console.log("errors: ", methods.formState.errors);
+  
+  
   const onSubmit = methods.handleSubmit((e) => console.log(e));
-  // e.preventDefault()
-  // setFormStatus('Submitting...')
-  // const { email, subject , message } = e.target.elements
-  // let conFom = {
-  //     email: email.value,
-  //     subject: subject.value,
-  //     message: message.value,
-  // }
-  // console.log(conFom);
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleSubjectChange = (e) => {
-    console.log(e);
-  };
-
-  const handleMessageChange = (e) => {
-    console.log(e.target.value);
-  };
+  
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
