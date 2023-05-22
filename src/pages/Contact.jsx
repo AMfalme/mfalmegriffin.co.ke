@@ -25,35 +25,36 @@ export default function Contact() {
     (e) => {
       setFormStatus("Sending");
       axios
-      .post(API_URL + 'core/contact', {
-        email : e.email,
-        subject : e.subject,
-        description: e.message
-      })
-      .then(response => {
-        
-        
-        setSendStatus({
-          status: 200,
-          title: "Successfull",
-          message: "Message sent successfully. We will get in touch soon."
+        .post(API_URL + 'core/contact', {
+          email: e.email,
+          subject: e.subject,
+          description: e.message
+        })
+        .then(response => {
+
+
+          setSendStatus({
+            status: 200,
+            title: "Successfull",
+            message: "Message sent successfully. We will get in touch soon."
+          });
+          setFormStatus("Send");
+
+        })
+        .catch((error) => {
+          setSendStatus({
+            status: 500,
+            title: "Error",
+            message: error ? Object.values(error.response.data) : "An Error occured"
+          });
+          setFormStatus("Send");
+        })
+        .finally(() => {
+          console.log("the axios call was executed");
+          methods.reset();
         });
-        setFormStatus("Send");
-      
-      })      
-      .catch((error) => {
-        setSendStatus({
-          status: 500,
-          title: "Error",
-          message: Object.values(error.response.data)
-        });
-        setFormStatus("Send");
-      })
-      .finally(() => {
-        console.log("the axios call was executed");
-      });
-  });
-  
+    });
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -127,7 +128,7 @@ export default function Contact() {
             </button>
           </form>
         </FormProvider>
-        {sendStatus && <Alert message={sendStatus?.message} title={sendStatus?.title}/>}
+        {sendStatus && <Alert message={sendStatus?.message} title={sendStatus?.title} />}
       </div>
     </section>
   );
