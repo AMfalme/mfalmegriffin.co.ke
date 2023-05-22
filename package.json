@@ -2,7 +2,7 @@
   "homepage": "https://AMfalme.github.io/mfalmegriffin.co.ke",
   "name": "mfalme-griffin",
   "version": "0.1.0",
-  "proxy": "http://localhost:8000",
+  "proxy": "https://retro.mfalmegriffin.co.ke",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.14",
