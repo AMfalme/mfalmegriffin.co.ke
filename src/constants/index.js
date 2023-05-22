@@ -1,1 +1,1 @@
-export const API_URL = "retro.mfalmegriffin.co.ke";
+export const API_URL = "retro.mfalmegriffin.co.ke/";
