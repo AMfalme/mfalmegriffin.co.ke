@@ -17,7 +17,7 @@ const navigation = [
   { name: "About", href: "http://mfalmegriffin.co.ke/#About" },
   { name: "Career", href: "http://mfalmegriffin.co.ke/#Work" },
   { name: "Projects", href: "http://mfalmegriffin.co.ke/#Projects" },
-  {name: 'Blog'}
+  { name: 'Blog' }
 ];
 
 export default function Hero() {
@@ -25,8 +25,19 @@ export default function Hero() {
   const [heroData, setHeroData] = useState({});
 
   useEffect(() => {
-    const heroDetails = axios
-      .get(API_URL+'core/hero/')
+    const config = {
+      
+      'Content-Type': 'application/json',
+      withCredentials: false,
+      headers: {
+        "Access-Control-Allow-Origin": "*"
+        }
+      }
+    
+    axios
+      .get(API_URL + 'core/hero/',
+        config
+      )
       .then((response) => {
         setHeroData(response.data.results[0]);
       })
@@ -35,7 +46,7 @@ export default function Hero() {
         console.log("the axios call was executed");
       });
   }, []);
-  
+
   return (
     <div className="bg-white dark:bg-slate-800">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -72,7 +83,7 @@ export default function Hero() {
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <DarkModeToggle />
-           
+
           </div>
         </nav>
         <Dialog
