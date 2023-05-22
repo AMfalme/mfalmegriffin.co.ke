@@ -25,18 +25,18 @@ export default function Hero() {
   const [heroData, setHeroData] = useState({});
 
   useEffect(() => {
-    const config = {
+    // const config = {
       
-      'Content-Type': 'application/json',
-      withCredentials: false,
-      headers: {
-        "Access-Control-Allow-Origin": "*"
-        }
-      }
+    //   'Content-Type': 'application/json',
+    //   withCredentials: false,
+    //   headers: {
+    //     "Access-Control-Allow-Origin": "*"
+    //     }
+    //   }
     
     axios
       .get(API_URL + 'core/hero/',
-        config
+        // config
       )
       .then((response) => {
         setHeroData(response.data.results[0]);
