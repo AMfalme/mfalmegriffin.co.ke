@@ -121,7 +121,7 @@ export default function Contact() {
               placeholder={"Let us build something amazing together"}
             />
             <button
-              class="w-full inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 dark:bg-slate-800 bg-slate-900 text-white hover:bg-slate-700 hover:border-transparent rounded"
+              class="w-full inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 hover:border-transparent rounded"
               onClick={onSubmit}
             >
               {formStatus}
