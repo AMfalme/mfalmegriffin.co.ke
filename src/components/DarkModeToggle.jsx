@@ -14,15 +14,6 @@ export default function DarkModeToggle () {
   function changeTheme() {
     isDark === false ? setIsDark(true) : setIsDark(false)
   }
-  
-  const theme = useContext(ThemeContext);
-  const systemPrefersDark = useMediaQuery(
-    {
-      query: "(prefers-color-scheme: dark)",
-    },
-    undefined,
-    (isSystemDark) => setIsDark(isSystemDark)
-  );
 
   useEffect(() => {
     if (isDark) {
