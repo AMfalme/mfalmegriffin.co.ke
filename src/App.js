@@ -14,7 +14,7 @@ function App() {
 
   
   return (
-      <div className="App dark:bg-slate-800">
+      <div className="App bg-white dark:bg-slate-800">
         <Hero />
         <About />
         <Work />
