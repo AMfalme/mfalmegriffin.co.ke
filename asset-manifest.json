@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "https://amfalme.github.io/mfalmegriffin.co.ke/static/css/main.32a55014.css",
-    "main.js": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.dd50d7a7.js",
+    "main.js": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.d7cd6206.js",
     "static/media/nyagakaandondusoadvocates.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/nyagakaandondusoadvocates.91a58b926f2917e2b6e0.png",
     "static/media/thesteppingstoneselementaryschool.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/thesteppingstoneselementaryschool.b95f5d831b97c00b4788.png",
     "static/media/mfalmegriffin.co.ke.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/mfalmegriffin.co.ke.8d2f3a19020061748948.png",
@@ -10,10 +10,10 @@
     "static/media/logo-bposeats.png": "https://amfalme.github.io/mfalmegriffin.co.ke/static/media/logo-bposeats.ea027dfc44bcf5feadc2.png",
     "index.html": "https://amfalme.github.io/mfalmegriffin.co.ke/index.html",
     "main.32a55014.css.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/css/main.32a55014.css.map",
-    "main.dd50d7a7.js.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.dd50d7a7.js.map"
+    "main.d7cd6206.js.map": "https://amfalme.github.io/mfalmegriffin.co.ke/static/js/main.d7cd6206.js.map"
   },
   "entrypoints": [
     "static/css/main.32a55014.css",
-    "static/js/main.dd50d7a7.js"
+    "static/js/main.d7cd6206.js"
   ]
 }
