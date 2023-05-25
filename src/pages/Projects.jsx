@@ -40,7 +40,7 @@ const products = [
 
 export default function Projects() {
   return (
-    <div className="w-10/12 m-auto bg-white dark:bg-slate-800" id="Projects">
+    <div className="w-10/12 m-auto dark:bg-slate-800" id="Projects">
       <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
         <h2 className="text-2xl font-bold tracking-tighttext-zinc-800 dark:text-zinc-100">
           Projects I have worked on

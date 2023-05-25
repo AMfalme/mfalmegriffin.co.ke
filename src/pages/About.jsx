@@ -15,7 +15,7 @@ export default function About() {
   return (
     <div
       id="About"
-      className="container mx-auto py-8 mt-16 border-y border-gray-400 dark:border-gray-100 sm:flex justify-between w-10/12 relative bg-white dark:bg-slate-800"
+      className="container mx-auto py-8 mt-16 border-y border-gray-400 dark:border-gray-100 sm:flex justify-between w-10/12 relative dark:bg-slate-800"
     >
       <div className="min-w-1/2 p-x-12">
         <h1 className="mb-5 text-zinc-800 dark:text-zinc-100">ABOUT</h1>
