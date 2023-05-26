@@ -1,36 +1,39 @@
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import Toggle from 'react-toggle'
-import { useMediaQuery } from "react-responsive";
-
-import { ThemeContext, themes } from '../context/theme-context';
 
 
 export default function DarkModeToggle () {
   
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(JSON.parse(localStorage.getItem("theme")) || false);
 
   
   
   function changeTheme() {
-    isDark === false ? setIsDark(true) : setIsDark(false)
+    if (isDark) { 
+      setIsDark(false);
+      localStorage.setItem("theme", JSON.stringify(false))
+      console.log("run")
+    }
+    else {
+      setIsDark(true)
+      localStorage.setItem("theme", true)
+    }
   }
 
   useEffect(() => {
     if (isDark) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
+      document.body.classList.add('dark') }
+    else { document.body.classList.remove('dark')}
+    
+    
   }, [isDark]); 
   
   return (
-    <ThemeContext.Provider value={"light"}>
       <Toggle
         checked={isDark}
         onChange={() => changeTheme()}
         icons={''}
         aria-label="Dark mode toggle"
-      />  
-    </ThemeContext.Provider>
+      />
   )
 }
